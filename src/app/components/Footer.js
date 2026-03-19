@@ -48,9 +48,20 @@ export default function Footer() {
             fontSize: '0.9rem',
             color: 'rgba(255,255,255,0.7)',
             lineHeight: 1.6,
+            marginBottom: '1rem',
           }}>
             Australia's specialist caravan insurance comparison platform. Find the right cover for your journey.
           </p>
+          <a href="mailto:contact@comparecaravaninsurance.com.au" style={{
+            fontSize: '0.9rem',
+            color: 'rgba(255,255,255,0.9)',
+            textDecoration: 'none',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+          }}>
+            <span>✉</span> contact@comparecaravaninsurance.com.au
+          </a>
         </div>
 
         <div>
@@ -75,6 +86,13 @@ export default function Footer() {
                 textDecoration: 'none',
                 fontSize: '0.9rem',
               }}>Compare Now</a>
+            </li>
+            <li style={{ marginBottom: '0.5rem' }}>
+              <a href="/guides" style={{
+                color: 'rgba(255,255,255,0.7)',
+                textDecoration: 'none',
+                fontSize: '0.9rem',
+              }}>Insurance Guides</a>
             </li>
           </ul>
         </div>

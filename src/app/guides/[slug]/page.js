@@ -1,130 +1,165 @@
+import { createClient } from '@supabase/supabase-js'
+import { notFound } from 'next/navigation'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-import GuideFAQ from '../../components/GuideFAQ'
-import { supabase } from '../../lib/supabase'
-import { notFound } from 'next/navigation'
 
-export async function generateMetadata({ params }) {
-  const { slug } = await params
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+)
 
-  const { data } = await supabase
-    .from('guides')
-    .select('title, description')
+export const revalidate = 3600
+
+async function getGuide(slug) {
+  const { data, error } = await supabase
+    .from('caravan_guides')
+    .select('*')
     .eq('slug', slug)
     .single()
+  
+  if (error || !data) {
+    return null
+  }
+  
+  return data
+}
 
-  if (!data) return { title: 'Guide not found' }
-
+export async function generateMetadata({ params }) {
+  const guide = await getGuide(params.slug)
+  
+  if (!guide) {
+    return {
+      title: 'Guide Not Found',
+    }
+  }
+  
   return {
-    title: `${data.title} | comparecaravaninsurance.com.au`,
-    description: data.description,
+    title: `${guide.title} | Compare Caravan Insurance`,
+    description: guide.meta_description || guide.excerpt,
   }
 }
 
 export default async function GuidePage({ params }) {
-  const { slug } = await params
-
-  const { data: guide } = await supabase
-    .from('guides')
-    .select('*')
-    .eq('slug', slug)
-    .eq('published', true)
-    .single()
-
-  if (!guide) notFound()
-
-  const dateDisplay = new Date(guide.updated_at || guide.created_at).toLocaleDateString('en-AU', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  })
-
-  const faqs = guide.faqs || []
-
-  const faqSchema = faqs.length > 0 ? {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map(faq => ({
-      '@type': 'Question',
-      name: faq.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.a,
-      },
-    })),
-  } : null
+  const guide = await getGuide(params.slug)
+  
+  if (!guide) {
+    notFound()
+  }
 
   return (
     <>
       <Header />
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      
+      <article style={{
+        padding: '60px 5% 100px',
+        maxWidth: '800px',
+        margin: '0 auto',
+      }}>
+        <div style={{
+          marginBottom: '2rem',
+        }}>
+          <a 
+            href="/guides"
+            style={{
+              color: 'var(--primary)',
+              textDecoration: 'none',
+              fontSize: '0.9rem',
+              fontWeight: 600,
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+            }}
+          >
+            ← Back to Guides
+          </a>
+        </div>
+
+        <div style={{
+          display: 'inline-block',
+          background: 'var(--primary)',
+          color: 'white',
+          fontSize: '0.8rem',
+          fontWeight: 700,
+          padding: '6px 16px',
+          borderRadius: '20px',
+          marginBottom: '1.5rem',
+        }}>
+          {guide.category || 'Guide'}
+        </div>
+
+        <h1 style={{
+          fontFamily: 'var(--font-heading), sans-serif',
+          fontSize: 'clamp(2rem, 5vw, 2.8rem)',
+          fontWeight: 800,
+          color: 'var(--text)',
+          marginBottom: '1rem',
+          lineHeight: 1.2,
+        }}>
+          {guide.title}
+        </h1>
+
+        <div style={{
+          fontSize: '0.9rem',
+          color: 'var(--text-muted)',
+          marginBottom: '3rem',
+          paddingBottom: '2rem',
+          borderBottom: '1px solid var(--border)',
+        }}>
+          Last updated: {new Date(guide.updated_at).toLocaleDateString('en-AU', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+          })}
+        </div>
+
+        <div 
+          style={{
+            fontSize: '1.05rem',
+            lineHeight: 1.8,
+            color: 'var(--text)',
+          }}
+          className="guide-content"
+          dangerouslySetInnerHTML={{ __html: guide.content }}
         />
-      )}
-      <main style={{ paddingTop: '64px', background: '#0f1923', minHeight: '100vh' }}>
-        <article style={{ maxWidth: '760px', margin: '0 auto', padding: '80px 5%' }}>
 
-          <div className="section-label" style={{ marginBottom: '1rem' }}>
-            {guide.category}
-          </div>
-
-          <h1 style={{
-            fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)',
-            fontWeight: 800, letterSpacing: '-0.04em',
-            lineHeight: 1.15, marginBottom: '1rem',
-          }}>
-            {guide.title}
-          </h1>
-
+        <div style={{
+          marginTop: '4rem',
+          padding: '2rem',
+          background: 'var(--surface)',
+          borderRadius: '12px',
+          border: '1px solid var(--border)',
+        }}>
+          <h3 style={{
+            fontFamily: 'var(--font-heading), sans-serif',
+            fontSize: '1.3rem',
+            fontWeight: 700,
+            marginBottom: '1rem',
+          }}>Ready to Compare?</h3>
           <p style={{
-            fontSize: '0.8rem',
-            color: '#64748b',
             marginBottom: '1.5rem',
+            color: 'var(--text-muted)',
           }}>
-            By {guide.author || 'The CCI Team'} · Last updated: {dateDisplay}
+            Find the right caravan insurance for your needs in minutes.
           </p>
+          <a 
+            href="/#compare"
+            style={{
+              display: 'inline-block',
+              background: 'var(--primary)',
+              color: 'white',
+              padding: '12px 32px',
+              borderRadius: '50px',
+              fontSize: '1rem',
+              fontWeight: 700,
+              textDecoration: 'none',
+              transition: 'all 0.2s',
+            }}
+          >
+            Compare Insurers Now
+          </a>
+        </div>
+      </article>
 
-          {guide.description && (
-            <p style={{
-              fontSize: '1.1rem', color: '#8faabf',
-              lineHeight: 1.7, marginBottom: '3rem',
-              paddingBottom: '2rem',
-              borderBottom: '1px solid rgba(255,255,255,0.08)',
-            }}>
-              {guide.description}
-            </p>
-          )}
-
-          <div
-            className="guide-content"
-            dangerouslySetInnerHTML={{ __html: guide.content }}
-          />
-
-          <GuideFAQ faqs={faqs} />
-
-          <div style={{
-            marginTop: '4rem',
-            padding: '2rem',
-            background: '#1a2733',
-            border: '1px solid rgba(245,158,11,0.2)',
-            borderRadius: '12px',
-            textAlign: 'center',
-          }}>
-            <h3 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.5rem' }}>
-              Ready to find a specialist broker?
-            </h3>
-            <p style={{ color: '#8faabf', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
-              Answer 5 quick questions and get matched to the right broker for your trade.
-            </p>
-            <a href="/#compare" className="btn-primary">
-              Compare brokers →
-            </a>
-          </div>
-
-        </article>
-      </main>
       <Footer />
     </>
   )
