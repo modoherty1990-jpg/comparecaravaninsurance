@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import HowItWorks from './components/HowItWorks'
 import CompareForm from './components/CompareForm'
 import WhyUs from './components/WhyUs'
+import HowMatchingWorks from './components/HowMatchingWorks'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 
@@ -15,6 +16,7 @@ export default function Home() {
         <HowItWorks />
         <CompareForm />
         <WhyUs />
+        <HowMatchingWorks />
         <FAQ />
       </main>
       <Footer />
