@@ -9,39 +9,39 @@ export default function Terms() {
   return (
     <>
       <Header />
-      <main style={{ paddingTop: '64px' }}>
+      <main>
         <section style={{ maxWidth: '760px', margin: '0 auto', padding: '80px 5%' }}>
-          <h1 style={{ fontSize: '2rem', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: '0.5rem' }}>
+          <h1 style={{ fontSize: '2rem', fontWeight: 800, letterSpacing: '-0.03em', marginBottom: '0.5rem', color: 'var(--text)' }}>
             Terms of Use
           </h1>
-          <p style={{ color: '#94a3b8', marginBottom: '3rem', fontSize: '0.9rem' }}>
+          <p style={{ color: 'var(--text-muted)', marginBottom: '3rem', fontSize: '0.9rem' }}>
             Last updated: March 2026
           </p>
 
           {[
             {
               title: 'About this service',
-              body: 'comparecaravaninsurance.com.au is a free comparison and referral platform. We help builders, tradies and contractors find specialist insurance brokers. We are not a licensed insurance broker and we do not provide financial advice.'
+              body: 'comparecaravaninsurance.com.au is a free comparison and referral platform. We help Australian caravan, motorhome, and camper trailer owners find specialist insurance providers suited to their situation. We are not a licensed insurance broker and we do not provide financial advice.'
             },
             {
               title: 'No financial advice',
-              body: 'The information on this website is general in nature and does not take into account your personal circumstances, needs or objectives. Nothing on this site constitutes financial product advice. You should always read a broker\'s Financial Services Guide and consider whether their advice is appropriate for your situation before proceeding.'
+              body: 'The information on this website is general in nature and does not take into account your personal circumstances, needs or objectives. Nothing on this site constitutes financial product advice. You should always read an insurer\'s Product Disclosure Statement and Financial Services Guide, and consider whether a policy is appropriate for your situation before purchasing.'
             },
             {
               title: 'Accuracy of information',
-              body: 'We take reasonable care to ensure broker information is accurate and up to date. However we cannot guarantee the accuracy, completeness or currency of all information. Broker details including phone numbers, websites and specialties may change. Always verify broker credentials directly before engaging their services.'
+              body: 'We take reasonable care to ensure insurer and broker information is accurate and up to date. However we cannot guarantee the accuracy, completeness or currency of all information. Insurer details including phone numbers, websites, coverage terms, and specialties may change. Always verify insurer details directly before purchasing a policy.'
             },
             {
               title: 'Referral relationships',
-              body: 'We may receive a referral fee from brokers when you make contact through our platform. This fee is paid by the broker and does not affect the price you pay for insurance. Our matching results are based on profile fit, not commercial arrangements.'
+              body: 'We may receive a referral fee from insurers or brokers when you make contact through our platform. This fee is paid by the insurer or broker and does not affect the price you pay for insurance. Our matching results are based on how well an insurer covers your situation, not commercial arrangements.'
             },
             {
               title: 'Limitation of liability',
-              body: 'To the extent permitted by law, comparecaravaninsurance.com.au is not liable for any loss or damage arising from your use of this site or reliance on information provided. This includes any decisions made based on broker matches or information displayed.'
+              body: 'To the extent permitted by law, comparecaravaninsurance.com.au is not liable for any loss or damage arising from your use of this site or reliance on information provided. This includes any decisions made based on insurer matches or information displayed.'
             },
             {
               title: 'Third party websites',
-              body: 'Our site contains links to broker websites. We are not responsible for the content or privacy practices of those websites. Links do not constitute endorsement of any broker or their products.'
+              body: 'Our site contains links to insurer and broker websites. We are not responsible for the content or privacy practices of those websites. Links do not constitute endorsement of any insurer, broker, or their products.'
             },
             {
               title: 'Changes to these terms',
@@ -49,14 +49,14 @@ export default function Terms() {
             },
             {
               title: 'Contact',
-              body: 'For any questions about these terms, contact us at hello@comparecaravaninsurance.com.au.'
+              body: 'For any questions about these terms, contact us at contact@comparecaravaninsurance.com.au.'
             },
           ].map(section => (
             <div key={section.title} style={{ marginBottom: '2rem' }}>
-              <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.6rem' }}>
+              <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.6rem', color: 'var(--text)' }}>
                 {section.title}
               </h2>
-              <p style={{ color: '#8faabf', lineHeight: 1.8, fontSize: '0.95rem' }}>
+              <p style={{ color: 'var(--text-muted)', lineHeight: 1.8, fontSize: '0.95rem' }}>
                 {section.body}
               </p>
             </div>

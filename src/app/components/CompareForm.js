@@ -344,8 +344,7 @@ export default function CompareForm() {
             }}>
               <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
                 This tool matches insurers to your answers — it's not financial advice. We recommend you compare quotes and verify coverage details before purchasing.{' '}
-                <a href="/how-matching-works" style={{ color: 'var(--secondary)' }}>How matching works →</a>
-              </p>
+<a href="/#how-matching-works" style={{ color: 'var(--secondary)' }}>How matching works →</a>              </p>
             </div>
 
             <button onClick={restart} style={{
