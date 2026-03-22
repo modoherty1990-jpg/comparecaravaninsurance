@@ -12,7 +12,7 @@ export const metadata = {
   description: 'Expert guides on caravan insurance in Australia. Learn about coverage types, costs, specialist policies, and how to choose the right insurance for your caravan.',
 }
 
-export const revalidate = 3600
+export const revalidate = 0
 
 async function getGuides() {
   const { data, error } = await supabase
