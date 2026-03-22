@@ -14,7 +14,6 @@ export default function Hero() {
       background: 'linear-gradient(rgba(46, 125, 94, 0.7), rgba(74, 144, 164, 0.7)), url(/images/caravan_1.jpg)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      backgroundAttachment: 'fixed',
     }}>
 
       <div style={{

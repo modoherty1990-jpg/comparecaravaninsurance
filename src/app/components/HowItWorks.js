@@ -25,7 +25,6 @@ export default function HowItWorks() {
       background: 'linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url(/images/caravan_2.jpg)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      backgroundAttachment: 'fixed',
     }}>
       <div style={{
         maxWidth: '1200px',
