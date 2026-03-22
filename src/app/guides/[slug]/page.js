@@ -8,7 +8,7 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 )
 
-export const revalidate = 3600
+export const revalidate = 0
 
 async function getGuide(slug) {
   const { data, error } = await supabase
@@ -25,7 +25,8 @@ async function getGuide(slug) {
 }
 
 export async function generateMetadata({ params }) {
-  const guide = await getGuide(params.slug)
+  const { slug } = await params
+  const guide = await getGuide(slug)
   
   if (!guide) {
     return {
@@ -40,7 +41,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function GuidePage({ params }) {
-  const guide = await getGuide(params.slug)
+  const { slug } = await params
+  const guide = await getGuide(slug)
   
   if (!guide) {
     notFound()
