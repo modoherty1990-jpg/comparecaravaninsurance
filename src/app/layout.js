@@ -16,6 +16,7 @@ const dmSans = DM_Sans({
 })
 
 export const metadata = {
+    icons: { icon: '/favicon.svg' },
   title: 'Compare Caravan Insurance Australia | Find Specialist Cover in 3 Minutes',
   description: 'Compare caravan, motorhome, and camper insurance from Australia\'s top specialists. Get matched with insurers who cover off-road, modifications, and full-time living.',
   keywords: 'caravan insurance, motorhome insurance, camper insurance, off-road caravan insurance, caravan insurance Australia',
