@@ -40,6 +40,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${outfit.variable} ${dmSans.variable}`}>
       <head>
+          <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-S6XWR4NXM3"
