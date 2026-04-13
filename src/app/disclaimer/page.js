@@ -25,7 +25,7 @@ export default function Disclaimer() {
             },
             {
               title: 'Not a licensed broker',
-              body: 'comparecaravaninsurance.com.au is a comparison and referral platform. We are not a licensed insurance broker and do not hold an Australian Financial Services Licence (AFSL). We do not recommend, endorse or arrange insurance products. The brokers listed on our platform hold their own AFSL or operate as authorised representatives.'
+              body: 'comparecaravaninsurance.com.au is a free informational tool. We are not a licensed insurance broker and do not hold an Australian Financial Services Licence (AFSL). We do not recommend, endorse or arrange insurance products. The brokers listed on our platform hold their own AFSL or operate as authorised representatives.'
             },
             {
               title: 'Broker information',

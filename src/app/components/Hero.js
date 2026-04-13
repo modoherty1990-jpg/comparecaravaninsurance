@@ -32,7 +32,7 @@ export default function Hero() {
           background: '#fff', borderRadius: '50%',
           animation: 'pulse 2s infinite',
         }} />
-        Free Insurance Matching for Australian Caravanners
+        A free information tool for Australian Caravanners
       </div>
 
       <h1 style={{
@@ -59,7 +59,7 @@ export default function Hero() {
         animation: 'fadeUp 0.6s 0.2s ease both',
         textShadow: '0 1px 2px rgba(0,0,0,0.2)',
       }}>
-        Get matched with specialist insurers who understand off-road adventures, full-time living, and unique modifications. Compare quotes in 3 minutes.
+        Understand your options and find specialist insurers who cover off-road adventures, full-time living, and unique modifications.
       </p>
 
       <div style={{
@@ -69,8 +69,8 @@ export default function Hero() {
       }}>
         {[
           'Specialist insurers',
-          '100% free',
-          'No obligation',
+          'Independent',
+          'No sign-up required',
           'All states covered',
         ].map(item => (
           <div key={item} style={{
@@ -96,7 +96,7 @@ export default function Hero() {
         display: 'flex', gap: '1rem', flexWrap: 'wrap',
         animation: 'fadeUp 0.6s 0.4s ease both',
       }}>
-        <a href="#compare" className="btn-primary">Find My Insurers →</a>
+        <a href="#compare" className="btn-primary">Explore My Options →</a>
         <a href="#how-it-works" style={{
           background: 'rgba(255, 255, 255, 0.15)',
           backdropFilter: 'blur(10px)',

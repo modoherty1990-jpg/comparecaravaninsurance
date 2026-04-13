@@ -220,10 +220,10 @@ export default function CompareForm() {
         Find your match
       </div>
       <h2 className="section-title" style={{ textAlign: 'center', color: 'var(--text)' }}>
-        Get matched to a specialist insurer
+        See relevant insurers for your situation
       </h2>
       <p className="section-sub" style={{ textAlign: 'center', margin: '0 auto', color: 'var(--text-muted)' }}>
-        Six questions. 3 minutes. We'll show you insurers who specialise in your rig type and cover your travel style.
+        Answer a few questions and we'll show you insurers relevant to your rig type and travel style.
       </p>
 
       <div style={{
@@ -311,7 +311,7 @@ export default function CompareForm() {
                     {broker.description}
                   </p>
                   <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '1rem', lineHeight: 1.5 }}>
-                    This insurer specialises in your type of rig and covers your travel style. Give them a call or visit their website to get a quote.
+                    This insurer specialises in your type of rig and covers your travel style. Visit their website to learn more about their cover options.
                   </p>
                   <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
                     {broker.phone && broker.show_phone !== false && (
@@ -343,7 +343,7 @@ export default function CompareForm() {
               background: 'var(--surface)', borderRadius: '8px',
             }}>
               <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>
-                This tool matches insurers to your answers — it's not financial advice. We recommend you compare quotes and verify coverage details before purchasing.{' '}
+                This tool is for informational purposes only. It is not financial advice. We recommend you compare quotes and verify coverage details directly with insurers before purchasing.{' '}
 <a href="/#how-matching-works" style={{ color: 'var(--secondary)' }}>How matching works →</a>              </p>
             </div>
 

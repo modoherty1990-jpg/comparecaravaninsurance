@@ -7,7 +7,7 @@ export default function FAQ() {
   const faqs = [
     {
       question: 'Is this service really free?',
-      answer: 'Yes — completely free for caravan owners. We may receive a referral fee from insurers when you request a quote, but this never influences your match results. The algorithm scores insurers based purely on how well they fit your situation.'
+      answer: 'Yes — completely free. There are no fees and no sign-up required. This is an independent informational tool. The algorithm scores insurers based purely on how well they fit your situation.'
     },
     {
       question: 'Do all insurers cover off-road and remote travel?',

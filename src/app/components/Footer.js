@@ -50,7 +50,7 @@ export default function Footer() {
             lineHeight: 1.6,
             marginBottom: '1rem',
           }}>
-            Australia's specialist caravan insurance comparison platform. Find the right cover for your journey.
+            An independent informational guide to caravan insurance in Australia.
           </p>
           <a href="mailto:contact@comparecaravaninsurance.com.au" style={{
             fontSize: '0.9rem',
@@ -133,7 +133,7 @@ export default function Footer() {
       }}>
         <p>© {new Date().getFullYear()} Compare Caravan Insurance. All rights reserved.</p>
         <p style={{ marginTop: '0.5rem' }}>
-          This is a comparison and referral service, not a financial advice service.
+          This is an informational tool, not a financial advice service.
         </p>
       </div>
     </footer>

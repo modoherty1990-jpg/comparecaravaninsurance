@@ -93,24 +93,6 @@ export default function HowMatchingWorks() {
           ))}
         </div>
 
-        <div style={{
-          background: 'var(--surface)',
-          border: '1px solid var(--border)',
-          borderLeft: '4px solid var(--secondary)',
-          borderRadius: '8px',
-          padding: '1.5rem 2rem',
-          maxWidth: '800px',
-          margin: '0 auto',
-        }}>
-          <p style={{
-            fontSize: '0.9rem',
-            color: 'var(--text-muted)',
-            lineHeight: 1.7,
-            margin: 0,
-          }}>
-            <strong style={{ color: 'var(--text)' }}>How we make money:</strong> We earn a referral fee when you request a quote through us. Our goal is to match you with insurers who genuinely fit your situation—better matches mean better outcomes for you, and that's what keeps our service running.
-          </p>
-        </div>
       </div>
     </section>
   )

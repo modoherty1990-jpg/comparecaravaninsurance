@@ -21,7 +21,7 @@ export default function Terms() {
           {[
             {
               title: 'About this service',
-              body: 'comparecaravaninsurance.com.au is a free comparison and referral platform. We help Australian caravan, motorhome, and camper trailer owners find specialist insurance providers suited to their situation. We are not a licensed insurance broker and we do not provide financial advice.'
+              body: 'comparecaravaninsurance.com.au is a free informational tool. We help Australian caravan, motorhome, and camper trailer owners find specialist insurance providers suited to their situation. We are not a licensed insurance broker and we do not provide financial advice.'
             },
             {
               title: 'No financial advice',
@@ -30,10 +30,6 @@ export default function Terms() {
             {
               title: 'Accuracy of information',
               body: 'We take reasonable care to ensure insurer and broker information is accurate and up to date. However we cannot guarantee the accuracy, completeness or currency of all information. Insurer details including phone numbers, websites, coverage terms, and specialties may change. Always verify insurer details directly before purchasing a policy.'
-            },
-            {
-              title: 'Referral relationships',
-              body: 'We may receive a referral fee from insurers or brokers when you make contact through our platform. This fee is paid by the insurer or broker and does not affect the price you pay for insurance. Our matching results are based on how well an insurer covers your situation, not commercial arrangements.'
             },
             {
               title: 'Limitation of liability',

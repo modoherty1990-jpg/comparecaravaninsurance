@@ -18,7 +18,7 @@ const dmSans = DM_Sans({
 export const metadata = {
     icons: { icon: '/favicon.svg' },
   title: 'Compare Caravan Insurance Australia | Find Specialist Cover in 3 Minutes',
-  description: 'Compare caravan, motorhome, and camper insurance from Australia\'s top specialists. Get matched with insurers who cover off-road, modifications, and full-time living.',
+  description: 'An informational guide to caravan, motorhome, and camper insurance in Australia. Understand your options for off-road, modifications, and full-time living.',
   keywords: 'caravan insurance, motorhome insurance, camper insurance, off-road caravan insurance, caravan insurance Australia',
   metadataBase: new URL('https://www.comparecaravaninsurance.com.au'),
   alternates: {
@@ -28,7 +28,7 @@ export const metadata = {
     type: 'website',
     url: 'https://www.comparecaravaninsurance.com.au',
     title: 'Compare Caravan Insurance Australia',
-    description: 'Get matched with specialist caravan insurers who understand your journey.',
+    description: 'A free informational guide to caravan insurance in Australia. Find specialist insurers suited to your journey.',
     siteName: 'comparecaravaninsurance.com.au',
   },
   robots: {

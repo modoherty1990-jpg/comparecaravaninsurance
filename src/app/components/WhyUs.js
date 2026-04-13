@@ -12,7 +12,7 @@ export default function WhyUs() {
     },
     {
       title: 'Completely Free',
-      description: 'No fees, no obligations. We\'re paid by insurers when you get a quote, so our service costs you nothing.',
+      description: 'No fees, no sign-up required. This is an independent informational tool.',
     },
     {
       title: 'Australia-Wide',

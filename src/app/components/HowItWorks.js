@@ -14,8 +14,8 @@ export default function HowItWorks() {
     },
     {
       number: 3,
-      title: "Compare Quotes",
-      description: "Review your top matches and request quotes directly from insurers. No obligation."
+      title: "See Your Options",
+      description: "See which insurers are relevant to your situation and visit their websites to learn more."
     }
   ]
 
