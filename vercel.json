@@ -1,5 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "",
+  "buildCommand": "",
+  "outputDirectory": ".",
   "redirects": [
     { "source": "/brokers", "destination": "https://specialistcompare.com.au/caravan-insurance#providers", "permanent": true },
     { "source": "/(.*)", "destination": "https://specialistcompare.com.au/caravan-insurance", "permanent": true }
